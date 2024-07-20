@@ -9,36 +9,29 @@
 <title>Whether App</title>
 </head>
 <body>
-   
    <header class="header">
-       <div class="search-bar">
-       <input type="search" placeholder="Nigeria">
-       </div>
-       
-       <div class="search-icon">
-       <i class="fas fa-search"></i>
-       </div>
+     <div class="search-bar">
+          <input type="search" placeholder="Nigeria" id="search-fetch-input">
+     </div>
+     <div class="search-icon" id="search-fetch-button">
+          <i class="fas fa-search"></i>
+          </div>
    </header>
-    
-    <div class="img">
-        <img src="cloud.png" width="250px" alt="">
-        <p>
-            <h1>28°C</h1>
-            <p>Scattering Clouds</p>
-            
-        </p>
+    <div class="container">
+        <img src="cloud.png" width="250px" alt="" id="weather-icon">
+        <div>
+            <h1 id="weather-temp">28°C</h1>
+            <p id="weather-description">Scattering Clouds</p>
+      </div>
     </div>
-    
-    <footer>
+  <footer>
         <div class="tint">
             <i class="fas fa-tint"></i> <span>51%</span> <p>Humidity </p></span>
         </div>
-        
-          <div class="tint">
-            <i class="fas fa-water"></i> <span>4.36Km/H <p>Wind Speed</p></span>
+       <div class="tint">
+            <i class="fas fa-water"></i><span>4.36Km/H <p>Wind Speed</p></span>
         </div>
-        
-        
-    </footer>
+  </footer>
+  <script src="app.js"></script>
    </body>
 </html>
