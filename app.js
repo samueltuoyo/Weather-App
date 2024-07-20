@@ -1,30 +1,32 @@
-const searchInput = document.getElementById('search-fetch-input')
-const searchBtn = document.getElementById('search-fetch-button')
-const weatherTemp = document.getElementById('weather-temp')
-const weatherDesc = document.getElementById('weather-Description')
-const city = searchInput.value.trim()
-const apiKey = bf09142fa4854344916123406242007
-const temp = data.main.temp
-const description = data.weather[0].description
-const weatherIcon = document.querySelector('#weather-icon')
-      
+const searchInput = document.getElementById('search-fetch-input');
+const searchBtn = document.getElementById('search-fetch-button');
+const weatherTemp = document.getElementById('weather-temp');
+const weatherDesc = document.getElementById('weather-description');
+const weatherIcon = document.querySelector('#weather-icon');
+const apiKey = 'bf09142fa4854344916123406242007';
 
-function fetchWeather(){
- fetch(`(https://api.weatherapi.com/v1/forecast.json?key=bf09142fa4854344916123406242007&q)`) 
-  .then(response => response.json())
+function fetchWeather() {
+  const city = searchInput.value.trim();
+  const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
     .then(data => {
-      if (description.includes('rain') || temp < 15) { 
-        weatherIcon.src = 'img/rain.png'
+      const temp = data.current.temp_c;
+      const description = data.current.condition.text;
+
+      if (description.includes('rain') || temp < 15) {
+        weatherIcon.src = 'img/storm.png';
       } else {
-        weatherIcon.src = 'img/cloud.png'
+        weatherIcon.src = 'img/cloud.png';
       }
 
-      weatherTemp.innerHTML = `${temp}°C`
-      weatherDesc.innerHTML = description
+      weatherTemp.innerHTML = `${temp}°C`;
+      weatherDesc.innerHTML = description;
     })
-    .catch(error => console.error(error))
-   searchInput.value = ''
+    .catch(error => console.error(error));
+
+  searchInput.value = '';
 }
 
-searchBtn.addEventListener('click', fetchWeather)
-
+searchBtn.addEventListener('click', fetchWeather);
