@@ -42,4 +42,10 @@ function fetchWeather() {
   searchInput.value = '';
 }
 
+searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        fetchWeather();
+    }
+});
+
 searchBtn.addEventListener('click', fetchWeather);
