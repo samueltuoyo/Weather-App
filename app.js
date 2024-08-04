@@ -5,7 +5,7 @@ const weatherDesc = document.getElementById('weather-description');
 const weatherIcon = document.getElementById('weather-icon');
 const WeatherHumidity = document.getElementById('humidity');
 const WindSpeed = document.getElementById('wind-speed');
-const apiKey = 'bf09142fa4854344916123406242007';
+const apiKey = 'd5f5e05626d54e4b878161323240408';
 
 function fetchWeather() {
   const city = searchInput.value.trim();
