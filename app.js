@@ -41,7 +41,6 @@ function fetchWeather() {
     .catch(error => {
         console.error(error);
         weatherDesc.innerHTML = 'Syntax Error or Typo Seems theres no City/County that matches your search';
-        weatherDesc.style.color = 'red';
         weatherIcon.src = '';
         weatherTemp.innerHTML = '';
        WeatherHumidity.innerHTML = '';
