@@ -35,13 +35,22 @@ function fetchWeather() {
       weatherDesc.innerHTML = description;
       WeatherHumidity.innerHTML = humidity + '%';
       WindSpeed.innerHTML = windSpeed + 'Km/H';
+       document.querySelector('footer').style.visibility = 'visible';
       
     })
-    .catch(error => console.error(error));
+    .catch(error => {
+        console.error(error);
+        weatherDesc.innerHTML = 'Syntax Error or Typo Seems theres no City/County that matches your search';
+        weatherDesc.style.color = 'red';
+        weatherIcon.src = '';
+        weatherTemp.innerHTML = '';
+       WeatherHumidity.innerHTML = '';
+       WindSpeed.innerHTML = '';
+       document.querySelector('footer').style.visibility = 'hidden';
+      })
 
   searchInput.value = '';
-}
-
+ }
 searchInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         fetchWeather();
