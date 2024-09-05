@@ -3,12 +3,9 @@ import url from 'url';
 import path from 'path';
 import fs from 'fs/promises';
 import fetch from 'node-fetch'; // Import node-fetch for making HTTP requests
-import dotenv from 'dotenv';
-dotenv.config();
 
 // Fetch API Key from environment variables
 const API_KEY = process.env.API_KEY;
-console.log(API_KEY)
 
 // MIME type mapping
 const mimeTypes = {
