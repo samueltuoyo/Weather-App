@@ -3,7 +3,9 @@ import url from 'url';
 import path from 'path';
 import fs from 'fs/promises';
 import fetch from 'node-fetch';
+import config from 'dotenv'
 
+Config()
 // Fetch API Key from environment variables
 const API_KEY = process.env.API_KEY;
 
